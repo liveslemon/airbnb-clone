@@ -1,0 +1,254 @@
+:root {
+  --primary-color: #ff385c;
+  --border-color: #dddddd;
+  --text-color: #222222;
+  --background-color: #ffffff;
+  --font-family: "Circular", -apple-system, "BlinkMacSystemFont", "Roboto",
+    "Helvetica Neue", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+.navbar-header {
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+  height: 160px;
+}
+
+.navbar-header.scrolled {
+  height: 80px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  height: 80px;
+}
+
+.navbar-logo img {
+  height: 32px;
+}
+
+.navbar-middle-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-middle-links {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-middle-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0;
+  position: relative;
+}
+
+.navbar-middle-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--text-color);
+}
+
+.navbar-search-bar-scrolled {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 40px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.navbar-search-bar-scrolled:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.navbar-search-bar-scrolled-button {
+  background: transparent;
+  border: none;
+  padding: 0 16px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.navbar-search-bar-scrolled-button-guest {
+  display: flex;
+  align-items: center;
+  padding-right: 9px;
+  color: #717171;
+  font-weight: 400;
+}
+
+.navbar-search-bar-scrolled-divider {
+  height: 24px;
+  width: 1px;
+  background-color: var(--border-color);
+}
+
+.navbar-search-icon-scrolled {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+.navbar-right-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.host-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 22px;
+}
+
+.host-link:hover {
+  background-color: #f7f7f7;
+}
+
+.language-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.language-button:hover {
+  background-color: #f7f7f7;
+}
+
+.profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  padding: 5px 5px 5px 12px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.profile-menu:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.hamburger-icon {
+  font-size: 16px;
+}
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #717171;
+  border-radius: 50%;
+}
+
+.navbar-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66px;
+  width: 100%;
+  padding-bottom: 14px;
+}
+
+.navbar-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 40px;
+  width: 850px;
+}
+
+.navbar-search-field {
+  flex: 1.5;
+  padding: 14px 24px;
+  position: relative;
+}
+.navbar-search-field:nth-child(2),
+.navbar-search-field:nth-child(3) {
+  flex: 1;
+}
+
+.navbar-search-field:hover {
+  background-color: #ebebeb;
+  border-radius: 40px;
+}
+
+.navbar-search-field label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding-bottom: 2px;
+  display: block;
+}
+
+.navbar-search-field input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #717171;
+}
+
+.navbar-search-divider {
+  height: 32px;
+  width: 1px;
+  background-color: var(--border-color);
+}
+
+.search-button {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 7px;
+  margin-left: auto;
+}
+
+.main-content {
+  padding-top: 160px; /* To prevent content from being hidden behind the fixed navbar */
+  height: 200vh; /* For scroll demonstration */
+}

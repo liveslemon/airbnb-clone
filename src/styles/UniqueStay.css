@@ -1,0 +1,137 @@
+.unique-stays-wrapper {
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+.tabs > div {
+  cursor: pointer;
+  font-size: 14px;
+  padding-bottom: 4px;
+  color: #666;
+}
+
+.active-tab {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  color: black;
+}
+
+.link-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.link-item {
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+}
+
+.link-item:hover {
+  text-decoration: underline;
+}
+
+.link-country {
+  font-size: 12px;
+  color: #888;
+}
+
+.show-more {
+  background: none;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.show-more:hover {
+  text-decoration: underline;
+}
+
+.arrow {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.link-subtitle {
+  display: block;
+  font-size: 13px;
+  color: #aaa;
+  font-weight: 400;
+  margin-top: 2px;
+  transition: color 0.2s, font-weight 0.2s;
+}
+
+.link-item:hover .link-subtitle {
+  color: #222;
+  font-weight: 600;
+}
+.globe-selector {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+@media (max-width: 900px) {
+  .unique-stays-wrapper {
+    padding: 20px 8px;
+  }
+  .tabs {
+    gap: 12px;
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+  .link-grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .unique-stays-wrapper {
+    padding: 10px 2px;
+  }
+  .section-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .tabs {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    align-items: flex-start;
+  }
+  .link-grid {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .link-item {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,84 @@
+/* src/MainDiv.css */
+
+/* Global styles for the body section */
+.main-div-container {
+  max-width: 1350px; /* Airbnb's content is typically constrained */
+  margin: 0 auto; /* Center the container */
+  padding: 48px 24px; /* Generous padding top/bottom and sides */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #222222; /* Airbnb's primary text color */
+  margin-top: 200px;
+}
+
+/* .content-wrapper { */
+/* This div just wraps the sections, no specific styling needed unless for further layout */
+/* } */
+
+/* Section Header Styles (e.g., "Airbnb Originals", "Experiences in London") */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 900;
+  margin-bottom: 10px; /* Space between header and card grid */
+  margin-top: 10px;
+}
+
+.section-title {
+  font-size: 20px; /* Slightly larger for section titles */
+  font-weight: 600; /* Semi-bold */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between title text and arrow icon */
+  margin: 0; /* Remove default margin */
+}
+
+.section-title-arrow {
+  width: 20px; /* Size of the arrow icon */
+  height: 20px;
+  stroke: #222222; /* Color of the arrow */
+}
+
+/* Scroll Buttons */
+.scroll-buttons {
+  display: flex;
+  gap: 12px; /* Space between left and right scroll buttons */
+}
+
+.scroll-button {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 50%; /* Make them circular */
+  width: 25px; /* Fixed width/height for circular buttons */
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: all 0.2s ease-in-out; /* Smooth transitions */
+}
+body {
+  background-color: white;
+}
+.scroll-button:hover {
+  border-color: #b0b0b0; /* Darker border on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.1); /* Slightly more pronounced shadow */
+}
+
+.scroll-arrow {
+  width: 20px; /* Size of the arrow inside the button */
+  height: 20px;
+  stroke: #222222; /* Color of the arrow */
+  stroke-width: 3; /* Thickness of the arrow line */
+}
+
+/* "Popular with travelers from your area" header */
+.popular-travelers-header {
+  font-size: 32px; /* Larger font size for this prominent header */
+  font-weight: 700; /* Bold */
+  margin-top: 64px; /* More space above this main header */
+  margin-bottom: 40px; /* More space below this main header */
+  color: #222222;
+}

@@ -1,0 +1,191 @@
+/* src/Cards.css */
+
+.cards-grid {
+  display: grid;
+  /* Adjust minmax to control card width and number of columns */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px; /* Space between cards */
+  /* For horizontal scrolling without wrapping on smaller screens, if desired */
+  /* If you want horizontal scrolling for sections, you'll need to remove grid and use flexbox with overflow-x */
+  /* For this "body only" replication, assuming a responsive grid is preferred. */
+  /* If you intend the scroll buttons to work with a single row: */
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Optional: snap to cards */
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+  display: flex; /* Use flex for horizontal scrolling */
+  flex-wrap: nowrap; /* Prevent cards from wrapping to next row */
+}
+
+/* Hide scrollbar, but keep scrolling functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, Opera */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.experience-card {
+  flex: 0 0 auto; /* Prevent cards from growing, allow them to shrink to content, but don't force stretch */
+  /* width: 180px; Explicit width for horizontal scrolling, adjust as needed */
+  width: clamp(160px, 15vw, 180px);
+  scroll-snap-align: start; /* Optional: snap cards to the start of the scroll area */
+
+  /* No explicit border or strong shadow on the card itself, as seen on Airbnb */
+  position: relative; /* For absolute positioning of tags and heart icon */
+  margin-bottom: 8px; /* Small margin below card for visual separation in grid context if not using gap */
+}
+
+.card-image {
+  width: 100%;
+  height: 180px; /* Fixed height for consistent image size */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+  border-radius: 20px; /* Rounded corners for images */
+  margin-bottom: 8px; /* Space between image and text */
+}
+
+/* Tags (Popular, Original) */
+.card-popular-tag,
+.card-original-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: white; /* White background */
+  color: #222222; /* Dark text */
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 10; /* Ensure tag is above the image */
+}
+
+/* Heart Icon */
+.card-heart-icon-wrapper {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(236, 236, 236, 0.9); /* Slightly transparent white background */
+  border-radius: 50%; /* Circular background */
+  width: 32px; /* Size of the heart background */
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  border: 1px solid #fff;
+  transition: all 0.2s ease;
+}
+.card-heart-icon-wrapper:hover{
+  background-color: #fff;
+}
+.card-heart-icon {
+  width: 18px; /* Size of the heart icon */
+  height: 18px;
+  stroke: #222222; /* Dark stroke for the heart */
+  fill: none; /* No fill by default */
+  transition: fill 0.2s ease;
+}
+
+.card-heart-icon-wrapper:hover .card-heart-icon {
+  fill: #ff385c; /* Red fill on hover */
+  stroke: #ff385c; /* Red stroke on hover */
+}
+
+/* Card Content (Title, Details, Rating) */
+.card-content {
+  padding: 0 4px; /* Small padding on the sides for text */
+}
+
+.card-title {
+  font-size: 12px;
+  font-weight: 600; /* Semi-bold */
+  margin: 0 0 4px 0; /* Space below title */
+  color: #222222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2; Limit title to 2 lines */
+  -webkit-box-orient: vertical;
+}
+
+.card-details {
+  font-size: 11px;
+  font-weight: 400; /* Regular weight */
+  color: #717171; /* Lighter grey for details */
+  margin: 0;
+}
+
+.card-rating {
+  font-weight: 500; /* Medium weight for rating */
+  color: #222222; /* Darker for rating */
+}
+
+/* Add a star icon before the rating */
+.card-rating::before {
+  content: "★ "; /* Unicode star character */
+}
+
+@media (max-width: 930px) {
+  .experience-card {
+    width: 200px;
+    scroll-snap-align: start; /* Optional: snap cards to the start of the scroll area */
+
+    /* No explicit border or strong shadow on the card itself, as seen on Airbnb */
+    position: relative; /* For absolute positioning of tags and heart icon */
+    margin-bottom: 8px; /* Small margin below card for visual separation in grid context if not using gap */
+  }
+
+  .card-image {
+    width: 100%;
+    height: 180px; /* Fixed height for consistent image size */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 20px; /* Rounded corners for images */
+    margin-bottom: 8px; /* Space between image and text */
+  }
+}
+/* Media Queries for Responsiveness (adjust as needed for specific breakpoints) */
+@media (max-width: 860px) {
+  .main-div-container {
+    padding: 32px 16px; /* Adjust padding for smaller screens */
+  }
+
+  .popular-travelers-header {
+    font-size: 28px;
+    margin-top: 48px;
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  /* For smaller screens, you might want the grid to wrap vertically */
+  .cards-grid {
+    display: grid; /* Switch back to grid for smaller screens */
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); /* Smaller cards */
+    overflow-x: hidden; /* Hide horizontal scroll if using grid */
+    scroll-snap-type: none; /* Disable snap if using grid */
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+  .cards-grid {
+    display: flex; /* Keep horizontal scroll on small screens */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .experience-card {
+    width: auto; /* Let grid control width */
+  }
+
+  .scroll-buttons {
+    display: none; /* Hide scroll buttons if grid wraps vertically */
+  }
+    .main-div-container {
+    margin-top: 20px;
+  }
+}
